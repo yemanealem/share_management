@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record id="view_share_dividend_tree" model="ir.ui.view">
+    <field name="name">share.dividend.tree</field>
+    <field name="model">share_management.share_dividend</field>
+    <field name="type">tree</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="shareholder_id"/>
+        <field name="amount"/>
+        <field name="date"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_share_dividend_form" model="ir.ui.view">
+    <field name="name">share.dividend.form</field>
+    <field name="model">share_management.share_dividend</field>
+    <field name="type">form</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="shareholder_id"/>
+            <field name="amount"/>
+            <field name="date"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_share_dividend" model="ir.actions.act_window">
+    <field name="name">Share Dividends</field>
+    <field name="res_model">share_management.share_dividend</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+</odoo>

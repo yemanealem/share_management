@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record id="view_shares_graph" model="ir.ui.view">
+    <field name="name">shareholder.shares.graph</field>
+    <field name="model">share_management.shareholder</field>
+    <field name="type">graph</field>
+    <field name="arch" type="xml">
+      <graph string="Shares by Shareholder" type="pie">
+        <field name="total_shares"/>
+        <field name="name" type="row"/>
+      </graph>
+    </field>
+  </record>
+</odoo>

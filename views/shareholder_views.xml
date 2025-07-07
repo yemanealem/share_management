@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <!-- Share Transaction List View -->
+  <record id="view_share_transaction_list" model="ir.ui.view">
+    <field name="name">share.transaction.list</field>
+    <field name="model">share_management.share_transaction</field>
+    <field name="type">list</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="shareholder_id"/>
+        <field name="type"/>
+        <field name="quantity"/>
+        <field name="price_per_share"/>
+        <field name="amount"/>
+        <field name="receiver_id"/>
+        <field name="date"/>
+      </list>
+    </field>
+  </record>
+
+  <record id="view_share_transaction_form" model="ir.ui.view">
+    <field name="name">share.transaction.form</field>
+    <field name="model">share_management.share_transaction</field>
+    <field name="type">form</field>
+    <field name="arch" type="xml">
+      <form string="Share Transaction">
+        <sheet>
+          <group>
+            <field name="shareholder_id"/>
+            <field name="type"/>
+            <field name="quantity"/>
+            <field name="price_per_share"/>
+            <field name="amount" readonly="1"/>
+            <field name="receiver_id"/>
+            <field name="date"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_share_transaction" model="ir.actions.act_window">
+    <field name="name">Share Transactions</field>
+    <field name="res_model">share_management.share_transaction</field>
+    <field name="view_mode">list,form</field>
+  </record>
+</odoo>
